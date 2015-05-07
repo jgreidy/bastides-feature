@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Bastides feature feature.
+ */
+
+include_once 'bastides_feature.features.inc';
