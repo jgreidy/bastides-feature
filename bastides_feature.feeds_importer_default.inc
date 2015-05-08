@@ -125,22 +125,12 @@ function bastides_feature_feeds_importer_default() {
           ),
           16 => array(
             'source' => 'Media URL',
-            'target' => 'Temporary target 1',
+            'target' => 'field_media_url:url',
             'unique' => FALSE,
           ),
           17 => array(
             'source' => 'EXIFRAW:GPSImgDirection',
             'target' => 'field_view_angle',
-            'unique' => FALSE,
-          ),
-          18 => array(
-            'source' => 'junk1',
-            'target' => 'field_media_url:url',
-            'unique' => FALSE,
-          ),
-          19 => array(
-            'source' => 'junk2',
-            'target' => 'field_media_file',
             'unique' => FALSE,
           ),
         ),
