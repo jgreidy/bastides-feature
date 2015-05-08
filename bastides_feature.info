@@ -71,6 +71,7 @@ features[field_instance][] = node-image_metadata-field_village
 features[menu_custom][] = main-menu
 features[menu_links][] = main-menu_metadata:metadata
 features[node][] = image_metadata
+features[variable][] = additional_settings__active_tab_image_metadata
 features[variable][] = comment_anonymous_image_metadata
 features[variable][] = comment_default_mode_image_metadata
 features[variable][] = comment_default_per_page_image_metadata
