@@ -964,7 +964,12 @@ function bastides_feature_field_default_field_instances() {
   // Exported field_instance: 'node-village_metadata-field_village_location'
   $field_instances['node-village_metadata-field_village_location'] = array(
     'bundle' => 'village_metadata',
-    'default_value' => array(),
+    'default_value' => array(
+      0 => array(
+        'input_format' => 'wkt',
+        'geom' => 'POINT (8.7369 41.9267)',
+      ),
+    ),
     'deleted' => 0,
     'description' => '',
     'display' => array(
