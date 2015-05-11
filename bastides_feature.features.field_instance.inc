@@ -1021,23 +1021,7 @@ function bastides_feature_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'geofield',
-      'settings' => array(
-        'delta_handling' => 'default',
-        'geocoder_field' => 'field_village_name',
-        'geocoder_handler' => 'google',
-        'handler_settings' => array(
-          'google' => array(
-            'all_results' => 0,
-            'geometry_type' => 'point',
-            'reject_results' => array(
-              'APPROXIMATE' => 0,
-              'GEOMETRIC_CENTER' => 0,
-              'RANGE_INTERPOLATED' => 0,
-              'ROOFTOP' => 0,
-            ),
-          ),
-        ),
-      ),
+      'settings' => array(),
       'type' => 'geofield_wkt',
       'weight' => 10,
     ),
