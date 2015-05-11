@@ -27,6 +27,7 @@ features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[feeds_importer][] = metadata
+features[feeds_importer][] = village_metadata
 features[feeds_tamper][] = metadata-junk1-rewrite
 features[feeds_tamper][] = metadata-junk2-rewrite
 features[field_base][] = body
