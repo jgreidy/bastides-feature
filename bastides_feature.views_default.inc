@@ -184,6 +184,13 @@ function bastides_feature_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
+    'action::bastides_module_get_location_google' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::node_make_sticky_action' => array(
       'selected' => 0,
       'postpone_processing' => 0,
