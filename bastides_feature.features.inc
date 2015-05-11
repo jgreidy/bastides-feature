@@ -39,6 +39,14 @@ function bastides_feature_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'village_metadata' => array(
+      'name' => t('Village Metadata'),
+      'base' => 'node_content',
+      'description' => t('Village level field'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
   );
   drupal_alter('node_info', $items);
   return $items;
