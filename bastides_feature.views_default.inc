@@ -149,6 +149,13 @@ function bastides_feature_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::bastides_module_default_location' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::node_assign_owner_action' => array(
       'selected' => 0,
       'postpone_processing' => 0,
@@ -633,12 +640,6 @@ function bastides_feature_views_default_views() {
   $handler->display->display_options['fields']['field_image_view']['field'] = 'field_image_view';
   $handler->display->display_options['fields']['field_image_view']['label'] = '';
   $handler->display->display_options['fields']['field_image_view']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_media_file']['id'] = 'field_media_file';
-  $handler->display->display_options['fields']['field_media_file']['table'] = 'field_data_field_media_file';
-  $handler->display->display_options['fields']['field_media_file']['field'] = 'field_media_file';
-  $handler->display->display_options['fields']['field_media_file']['label'] = '';
-  $handler->display->display_options['fields']['field_media_file']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -667,10 +668,12 @@ function bastides_feature_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'image_metadata' => 'image_metadata',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
   /* Filter criterion: Content: Photo Year (field_photo_year) */
   $handler->display->display_options['filters']['field_photo_year_value']['id'] = 'field_photo_year_value';
   $handler->display->display_options['filters']['field_photo_year_value']['table'] = 'field_data_field_photo_year';
   $handler->display->display_options['filters']['field_photo_year_value']['field'] = 'field_photo_year_value';
+  $handler->display->display_options['filters']['field_photo_year_value']['group'] = 1;
   $handler->display->display_options['filters']['field_photo_year_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_photo_year_value']['expose']['operator_id'] = 'field_photo_year_value_op';
   $handler->display->display_options['filters']['field_photo_year_value']['expose']['label'] = 'Photo Year (field_photo_year)';
@@ -681,19 +684,104 @@ function bastides_feature_views_default_views() {
     1 => 0,
     3 => 0,
   );
-  /* Filter criterion: Content: Village (field_village) */
-  $handler->display->display_options['filters']['field_village_value']['id'] = 'field_village_value';
-  $handler->display->display_options['filters']['field_village_value']['table'] = 'field_data_field_village';
-  $handler->display->display_options['filters']['field_village_value']['field'] = 'field_village_value';
-  $handler->display->display_options['filters']['field_village_value']['operator'] = 'contains';
-  $handler->display->display_options['filters']['field_village_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_village_value']['expose']['operator_id'] = 'field_village_value_op';
-  $handler->display->display_options['filters']['field_village_value']['expose']['label'] = 'Village (field_village)';
-  $handler->display->display_options['filters']['field_village_value']['expose']['operator'] = 'field_village_value_op';
-  $handler->display->display_options['filters']['field_village_value']['expose']['identifier'] = 'field_village_value';
-  $handler->display->display_options['filters']['field_village_value']['expose']['remember_roles'] = array(
+  /* Filter criterion: Content: Village Reference (field_village_reference) */
+  $handler->display->display_options['filters']['field_village_reference_target_id']['id'] = 'field_village_reference_target_id';
+  $handler->display->display_options['filters']['field_village_reference_target_id']['table'] = 'field_data_field_village_reference';
+  $handler->display->display_options['filters']['field_village_reference_target_id']['field'] = 'field_village_reference_target_id';
+  $handler->display->display_options['filters']['field_village_reference_target_id']['value'] = array(
+    3671 => '3671',
+    3672 => '3672',
+    3673 => '3673',
+    3674 => '3674',
+    3677 => '3677',
+    3675 => '3675',
+    3676 => '3676',
+    3678 => '3678',
+    3679 => '3679',
+    3680 => '3680',
+    3681 => '3681',
+    3684 => '3684',
+    3685 => '3685',
+    3690 => '3690',
+    3691 => '3691',
+    3683 => '3683',
+    3682 => '3682',
+    3692 => '3692',
+    3686 => '3686',
+    3687 => '3687',
+    3688 => '3688',
+    3689 => '3689',
+    3693 => '3693',
+    3694 => '3694',
+    3695 => '3695',
+    3696 => '3696',
+    3697 => '3697',
+    3698 => '3698',
+    3699 => '3699',
+    3700 => '3700',
+    3701 => '3701',
+    3702 => '3702',
+    3703 => '3703',
+    3706 => '3706',
+    3705 => '3705',
+    3704 => '3704',
+    3707 => '3707',
+    3709 => '3709',
+    3708 => '3708',
+    3710 => '3710',
+    3711 => '3711',
+    3715 => '3715',
+    3714 => '3714',
+    3716 => '3716',
+    3720 => '3720',
+    3718 => '3718',
+    3719 => '3719',
+    3713 => '3713',
+    3721 => '3721',
+    3723 => '3723',
+    3722 => '3722',
+    3717 => '3717',
+    3712 => '3712',
+    3724 => '3724',
+    3725 => '3725',
+    3726 => '3726',
+    3727 => '3727',
+    3728 => '3728',
+    3729 => '3729',
+    3730 => '3730',
+    3733 => '3733',
+    3731 => '3731',
+    3732 => '3732',
+    3737 => '3737',
+    3739 => '3739',
+    3740 => '3740',
+    3734 => '3734',
+    3735 => '3735',
+    3736 => '3736',
+    3738 => '3738',
+    3741 => '3741',
+    3742 => '3742',
+    3743 => '3743',
+    3744 => '3744',
+    3745 => '3745',
+    3746 => '3746',
+    3748 => '3748',
+    3747 => '3747',
+    3750 => '3750',
+    3751 => '3751',
+    3752 => '3752',
+    3749 => '3749',
+  );
+  $handler->display->display_options['filters']['field_village_reference_target_id']['group'] = 1;
+  $handler->display->display_options['filters']['field_village_reference_target_id']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['operator_id'] = 'field_village_reference_target_id_op';
+  $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['label'] = 'Village Reference (field_village_reference)';
+  $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['operator'] = 'field_village_reference_target_id_op';
+  $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['identifier'] = 'field_village_reference_target_id';
+  $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['remember_roles'] = array(
     2 => '2',
-    1 => 0,
+    1 => '1',
     3 => 0,
   );
 
@@ -708,6 +796,104 @@ function bastides_feature_views_default_views() {
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $export['metadata'] = $view;
+
+  $view = new view();
+  $view->name = 'photos_by_village';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'node';
+  $view->human_name = 'Photos by Village';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Photos by Village';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'table';
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_village_reference_target_id']['id'] = 'field_village_reference_target_id';
+  $handler->display->display_options['relationships']['field_village_reference_target_id']['table'] = 'field_data_field_village_reference';
+  $handler->display->display_options['relationships']['field_village_reference_target_id']['field'] = 'field_village_reference_target_id';
+  $handler->display->display_options['relationships']['field_village_reference_target_id']['label'] = 'Village';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Photo Year */
+  $handler->display->display_options['fields']['field_photo_year']['id'] = 'field_photo_year';
+  $handler->display->display_options['fields']['field_photo_year']['table'] = 'field_data_field_photo_year';
+  $handler->display->display_options['fields']['field_photo_year']['field'] = 'field_photo_year';
+  $handler->display->display_options['fields']['field_photo_year']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
+  /* Field: Content: Photograph */
+  $handler->display->display_options['fields']['field_photograph']['id'] = 'field_photograph';
+  $handler->display->display_options['fields']['field_photograph']['table'] = 'field_data_field_photograph';
+  $handler->display->display_options['fields']['field_photograph']['field'] = 'field_photograph';
+  $handler->display->display_options['fields']['field_photograph']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_photograph']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => 'file',
+  );
+  /* Field: Content: Media URL */
+  $handler->display->display_options['fields']['field_media_url']['id'] = 'field_media_url';
+  $handler->display->display_options['fields']['field_media_url']['table'] = 'field_data_field_media_url';
+  $handler->display->display_options['fields']['field_media_url']['field'] = 'field_media_url';
+  $handler->display->display_options['fields']['field_media_url']['click_sort_column'] = 'url';
+  $handler->display->display_options['fields']['field_media_url']['type'] = 'link_url';
+  /* Sort criterion: Content: Photo Year (field_photo_year) */
+  $handler->display->display_options['sorts']['field_photo_year_value']['id'] = 'field_photo_year_value';
+  $handler->display->display_options['sorts']['field_photo_year_value']['table'] = 'field_data_field_photo_year';
+  $handler->display->display_options['sorts']['field_photo_year_value']['field'] = 'field_photo_year_value';
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['relationship'] = 'field_village_reference_target_id';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'summary';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['nid']['summary']['sort_order'] = 'desc';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '1';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['base_path'] = 'photos-by-village';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'image_metadata' => 'image_metadata',
+  );
+
+  /* Display: Page */
+  $handler = $view->new_display('page', 'Page', 'page');
+  $handler->display->display_options['path'] = 'photos-by-village';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'Village Photos';
+  $handler->display->display_options['menu']['description'] = 'List of photos in each village';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'main-menu';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $export['photos_by_village'] = $view;
 
   $view = new view();
   $view->name = 'village_metadata';
