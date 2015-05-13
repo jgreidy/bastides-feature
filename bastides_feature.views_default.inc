@@ -784,7 +784,6 @@ function bastides_feature_views_default_views() {
   $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['label'] = 'Village Reference (field_village_reference)';
   $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['operator'] = 'field_village_reference_target_id_op';
   $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['identifier'] = 'field_village_reference_target_id';
-  $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['remember'] = TRUE;
   $handler->display->display_options['filters']['field_village_reference_target_id']['expose']['remember_roles'] = array(
     2 => '2',
     1 => '1',
