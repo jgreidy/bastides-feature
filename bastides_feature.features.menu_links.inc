@@ -47,6 +47,26 @@ function bastides_feature_menu_default_menu_links() {
     'weight' => -50,
     'customized' => 1,
   );
+  // Exported menu link: main-menu_image-api:http://bastides.dd:8084/api/v1.0/image_metadata
+  $menu_links['main-menu_image-api:http://bastides.dd:8084/api/v1.0/image_metadata'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'http://bastides.dd:8084/api/v1.0/image_metadata',
+    'router_path' => '',
+    'link_title' => 'Image API',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_image-api:http://bastides.dd:8084/api/v1.0/image_metadata',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: main-menu_image-download:import-images
   $menu_links['main-menu_image-download:import-images'] = array(
     'menu_name' => 'main-menu',
@@ -104,6 +124,26 @@ function bastides_feature_menu_default_menu_links() {
     'weight' => -43,
     'customized' => 1,
   );
+  // Exported menu link: main-menu_village-api:http://bastides.dd:8084/api/v1.0/village_metadata
+  $menu_links['main-menu_village-api:http://bastides.dd:8084/api/v1.0/village_metadata'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'http://bastides.dd:8084/api/v1.0/village_metadata',
+    'router_path' => '',
+    'link_title' => 'Village API',
+    'options' => array(
+      'attributes' => array(
+        'title' => '',
+      ),
+      'identifier' => 'main-menu_village-api:http://bastides.dd:8084/api/v1.0/village_metadata',
+    ),
+    'module' => 'menu',
+    'hidden' => 0,
+    'external' => 1,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => 0,
+    'customized' => 1,
+  );
   // Exported menu link: main-menu_villages:village-metadata
   $menu_links['main-menu_villages:village-metadata'] = array(
     'menu_name' => 'main-menu',
@@ -125,9 +165,11 @@ function bastides_feature_menu_default_menu_links() {
   // Included for use with string extractors like potx.
   t('Geocode Villages');
   t('Home');
+  t('Image API');
   t('Image Download');
   t('Metadata');
   t('Missing Photos');
+  t('Village API');
   t('Villages');
 
 
