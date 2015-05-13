@@ -80,12 +80,12 @@ function bastides_feature_feeds_importer_default() {
           ),
           7 => array(
             'source' => 'Village',
-            'target' => 'field_village',
+            'target' => 'field_village_reference:label',
             'unique' => FALSE,
           ),
           8 => array(
             'source' => 'Village',
-            'target' => 'field_village_reference:label',
+            'target' => 'field_village',
             'unique' => FALSE,
           ),
           9 => array(

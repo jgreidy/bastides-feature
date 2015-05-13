@@ -87,6 +87,23 @@ function bastides_feature_menu_default_menu_links() {
     'weight' => -49,
     'customized' => 1,
   );
+  // Exported menu link: main-menu_missing-photos:missing-photos
+  $menu_links['main-menu_missing-photos:missing-photos'] = array(
+    'menu_name' => 'main-menu',
+    'link_path' => 'missing-photos',
+    'router_path' => 'missing-photos',
+    'link_title' => 'Missing Photos',
+    'options' => array(
+      'identifier' => 'main-menu_missing-photos:missing-photos',
+    ),
+    'module' => 'system',
+    'hidden' => 0,
+    'external' => 0,
+    'has_children' => 0,
+    'expanded' => 0,
+    'weight' => -43,
+    'customized' => 1,
+  );
   // Exported menu link: main-menu_villages:village-metadata
   $menu_links['main-menu_villages:village-metadata'] = array(
     'menu_name' => 'main-menu',
@@ -110,6 +127,7 @@ function bastides_feature_menu_default_menu_links() {
   t('Home');
   t('Image Download');
   t('Metadata');
+  t('Missing Photos');
   t('Villages');
 
 
